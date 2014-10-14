@@ -12,10 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
-
+	
+	var _players: [Player] = []
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-		// Override point for customization after application launch.
+		
+		var player = Player()
+		player.name = "Bill Evans"
+		player.game = "Tic-Tac-Toe"
+		player.rating = 4
+		self._players.append(player)
+		
+		player = Player()
+		player.name = "Oscar Peterson"
+		player.game = "Spin the Bottle"
+		player.rating = 5;
+		self._players.append(player)
+		
 		return true
 	}
 
@@ -35,6 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func applicationDidBecomeActive(application: UIApplication) {
 		// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+		
+			println(self._players)
+		
 	}
 
 	func applicationWillTerminate(application: UIApplication) {
